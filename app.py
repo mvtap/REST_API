@@ -99,7 +99,7 @@ def create_app(db_url=None):
             401,
         )
 
-    def create_tables():
+    with app.app_context():
         db.create_all()
 
     api.register_blueprint(ItemBlueprint)
